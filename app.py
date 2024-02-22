@@ -14,6 +14,13 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+tesseract_path = os.getenv('TESSERACT_PATH')
+
+# If the environment variable is not set, use a default path
+if not tesseract_path:
+    tesseract_path = '/usr/bin/tesseract
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -28,7 +35,7 @@ def upload():
             image = cv2.imread(os.path.join(UPLOAD_FOLDER, image_filename))
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             gray = cv2.GaussianBlur(gray, (5, 5), 0)
-            pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
+            pytesseract.pytesseract.tesseract_cmd = tesseract_path
             text = pytesseract.image_to_string(gray, lang='eng', config='--psm 6')
             return render_template('download.html', image_filename=image_filename, text=text)
     return 'No file uploaded', 400
