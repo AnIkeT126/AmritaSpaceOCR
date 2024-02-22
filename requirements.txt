@@ -2,5 +2,5 @@ Flask==2.1.1
 opencv-python-headless
 pytesseract==0.3.8
 python-docx==0.8.11
-tesseract==4.1.1
-numpy>=1.19.0,<1.20.0
+tesseract
+numpy
