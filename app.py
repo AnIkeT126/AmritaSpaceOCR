@@ -5,6 +5,8 @@ import pytesseract
 import tempfile
 from docx import Document
 from io import BytesIO
+from werkzeug.utils import url_quote
+
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
