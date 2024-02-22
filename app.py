@@ -5,7 +5,8 @@ import pytesseract
 import tempfile
 from docx import Document
 from io import BytesIO
-from werkzeug.utils import quote
+from werkzeug.urls import quote
+
 
 
 app = Flask(__name__)
