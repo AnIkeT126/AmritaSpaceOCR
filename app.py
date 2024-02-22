@@ -18,7 +18,7 @@ tesseract_path = os.getenv('TESSERACT_PATH')
 
 # If the environment variable is not set, use a default path
 if not tesseract_path:
-    tesseract_path = '/usr/bin/tesseract
+    tesseract_path = '/usr/bin/tesseract'
 
 
 @app.route('/')
