@@ -5,7 +5,7 @@ import pytesseract
 import tempfile
 from docx import Document
 from io import BytesIO
-from werkzeug.urls import url_quote
+from urllib.parse import quote as url_quote
 
 
 
